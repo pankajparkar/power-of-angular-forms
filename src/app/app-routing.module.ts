@@ -11,7 +11,7 @@ const routes: Routes = [
   {path: 'basic', component: BasicComponent},
   {path: 'template-driven', component: TemplateDrivenComponent},
   {path: 'model-driven', component: ModelDrivenComponent},
-  {path: 'typed-form', component: TypedFormsComponent},
+  {path: 'typed-forms', component: TypedFormsComponent},
   {path: '', redirectTo: 'home', pathMatch: 'full'},
   {path: '**', redirectTo: 'home'},
 ];

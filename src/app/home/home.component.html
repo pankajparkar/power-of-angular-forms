@@ -1,6 +1,14 @@
 <mat-grid-list cols="2" rowHeight="2:1" class="navigations">
-    <mat-grid-tile>Basic</mat-grid-tile>
-    <mat-grid-tile>Template Driven</mat-grid-tile>
-    <mat-grid-tile>Model Driven</mat-grid-tile>
-    <mat-grid-tile>Typed Forms</mat-grid-tile>
+    <mat-grid-tile>
+        <a routerLink="../basic">Basic</a>
+    </mat-grid-tile>
+    <mat-grid-tile routerLink="template-driven">
+        <a routerLink="../template-driven">Template Driven</a>
+    </mat-grid-tile>
+    <mat-grid-tile routerLink="model-driven">
+        <a routerLink="../model-driven">Model Driven</a>
+    </mat-grid-tile>
+    <mat-grid-tile routerLink="typed-forms">
+        <a routerLink="../typed-forms">Typed Forms</a>
+    </mat-grid-tile>
 </mat-grid-list>
