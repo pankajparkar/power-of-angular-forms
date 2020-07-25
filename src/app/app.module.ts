@@ -9,6 +9,7 @@ import { ModelDrivenComponent } from './model-driven/model-driven.component';
 import { TypedFormsComponent } from './typed-forms/typed-forms.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HomeComponent } from './home/home.component';
+import { BasicComponent } from './basic/basic.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { HomeComponent } from './home/home.component';
     TemplateDrivenComponent,
     ModelDrivenComponent,
     TypedFormsComponent,
-    HomeComponent
+    HomeComponent,
+    BasicComponent
   ],
   imports: [
     BrowserModule,
