@@ -8,7 +8,7 @@ const routes: Routes = [
   {path: 'template-driven', component: TemplateDrivenComponent},
   {path: 'model-driven', component: ModelDrivenComponent},
   {path: 'typed-form', component: TypedFormsComponent},
-  {path: '', redirectTo: 'template-driven'},
+  {path: '', redirectTo: 'template-driven', pathMatch: 'full'},
   {path: '**', redirectTo: 'template-driven'},
 ];
 
