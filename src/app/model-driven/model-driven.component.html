@@ -1,76 +1,80 @@
 <button type="text" mat-raised-button color="primary">
   Mark All fields Required
 </button>
-<form novalidate>
+<form novalidate [formGroup]="profileForm">
+  {{ profileForm.value | json }}
   <div>
     <mat-form-field>
       <mat-label>First name</mat-label>
-      <input matInput>
+      <input matInput formControlName="firstName">
     </mat-form-field>
     <mat-form-field>
       <mat-label>Last Name</mat-label>
-      <input matInput>
+      <input matInput formControlName="lastName">
     </mat-form-field>
   </div>
   <div>
-    <mat-slide-toggle style="margin-right: 10px;">
+    <mat-slide-toggle style="margin-right: 10px;" (change)="toggle($event)">
       Want to add email?
     </mat-slide-toggle>
     <mat-form-field>
       <mat-label>Email</mat-label>
-      <input matInput>
+      <input matInput formControlName="email">
     </mat-form-field>
   </div>
   <div class="address">
     <h4>Current Address</h4>
     <mat-form-field>
       <mat-label>Address</mat-label>
-      <textarea matInput placeholder="Ex. 100 Main St">1600 Amphitheatre Pkwy</textarea>
+      <textarea matInput placeholder="Ex. 100 Main St" formControlName="address">1600 Amphitheatre Pkwy</textarea>
     </mat-form-field>
     <mat-form-field>
       <mat-label>Address 2</mat-label>
-      <textarea matInput></textarea>
+      <textarea matInput formControlName="address2"></textarea>
     </mat-form-field>
     <div>
       <mat-form-field>
         <mat-label>City</mat-label>
-        <input matInput placeholder="Ex. San Francisco">
+        <input matInput placeholder="Ex. San Francisco" formControlName="city">
       </mat-form-field>
       <mat-form-field>
         <mat-label>State</mat-label>
-        <input matInput placeholder="Ex. California">
+        <input matInput placeholder="Ex. California" formControlName="state">
       </mat-form-field>
       <mat-form-field>
         <mat-label>Postal Code</mat-label>
-        <input matInput #postalCode maxlength="5" placeholder="Ex. 94105" value="94043">
-        <mat-hint align="end">{{postalCode.value.length}} / 5</mat-hint>
+        <input matInput maxlength="5" placeholder="Ex. 94105" formControlName="postalCode">
       </mat-form-field>
     </div>
   </div>
   <div>
     <h4>Languages</h4>
-    <button type="button" mat-stroked-button>
+    <button type="button" mat-stroked-button (click)="addLanguage()">
       <mat-icon>add</mat-icon> Add
     </button>
-    <ng-container *ngFor="let item of [1,2]">
-      <div>
-        <mat-form-field>
-          <mat-label>Language Name</mat-label>
-          <mat-select>
-            <mat-option *ngFor="let language of ['Hindi', 'English', 'Marathi']" [value]="food">
-              {{language}}
-            </mat-option>
-          </mat-select>
-        </mat-form-field>
-        <mat-form-field>
-          <mat-label>Fluency</mat-label>
-          <mat-select>
-            <mat-option *ngFor="let language of ['Fluent', 'Native']" [value]="food">
-              {{language}}
-            </mat-option>
-          </mat-select>
-        </mat-form-field>
-      </div>
-    </ng-container>
+
+    <div formArrayName="languages">
+      <ng-container *ngFor="let langControl of getLanguages();let i = index">
+        <div [formGroupName]="i">
+          <mat-form-field>
+            <mat-label>Language Name</mat-label>
+            <mat-select formControlName="language">
+              <mat-option *ngFor="let language of ['Hindi', 'English', 'Marathi']" [value]="food">
+                {{language}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label>Fluency</mat-label>
+            <mat-select formControlName="fluency">
+              <mat-option *ngFor="let language of ['Fluent', 'Native']" [value]="food">
+                {{language}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+      </ng-container>
+    </div>
   </div>
+  <button mat-raised-button color="primary">Submit</button>
 </form>
