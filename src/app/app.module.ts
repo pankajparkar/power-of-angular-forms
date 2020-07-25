@@ -10,6 +10,7 @@ import { TypedFormsComponent } from './typed-forms/typed-forms.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HomeComponent } from './home/home.component';
 import { BasicComponent } from './basic/basic.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,8 @@ import { BasicComponent } from './basic/basic.component';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    FormsModule,
+    ReactiveFormsModule,
     SharedMaterialModule,
   ],
   providers: [],

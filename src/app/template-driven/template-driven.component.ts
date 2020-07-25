@@ -7,9 +7,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TemplateDrivenComponent implements OnInit {
 
+  firstName;
+  lastName;
+  email;
+  address;
+  address2;
+  city;
+  state;
+  postalCode;
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  submit(form) {
+    console.log(form.values);
   }
 
 }
