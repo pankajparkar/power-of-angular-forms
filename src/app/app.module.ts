@@ -8,13 +8,15 @@ import { TemplateDrivenComponent } from './template-driven/template-driven.compo
 import { ModelDrivenComponent } from './model-driven/model-driven.component';
 import { TypedFormsComponent } from './typed-forms/typed-forms.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TemplateDrivenComponent,
     ModelDrivenComponent,
-    TypedFormsComponent
+    TypedFormsComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
