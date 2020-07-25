@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "power-of-angular-forms"
+    }
+  },
+  "defaultProject": "power-of-angular-forms",
+  "cli": {
+    "analytics": "75af51bb-28e7-4450-9af1-6b05a846df6d"
+  }
 }
