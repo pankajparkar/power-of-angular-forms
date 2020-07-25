@@ -47,4 +47,30 @@
       </mat-form-field>
     </div>
   </div>
+  <div>
+    <h4>Languages</h4>
+    <button type="button" mat-stroked-button>
+      <mat-icon>add</mat-icon> Add
+    </button>
+    <ng-container *ngFor="let item of [1,2]">
+      <div>
+        <mat-form-field>
+          <mat-label>Language Name</mat-label>
+          <mat-select>
+            <mat-option *ngFor="let language of ['Hindi', 'English', 'Marathi']" [value]="food">
+              {{language}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Fluency</mat-label>
+          <mat-select>
+            <mat-option *ngFor="let language of ['Fluent', 'Native']" [value]="food">
+              {{language}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+    </ng-container>
+  </div>
 </form>
