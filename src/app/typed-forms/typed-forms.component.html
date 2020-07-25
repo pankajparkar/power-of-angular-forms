@@ -42,8 +42,7 @@
       </mat-form-field>
       <mat-form-field>
         <mat-label>Postal Code</mat-label>
-        <input matInput #postalCode maxlength="5" placeholder="Ex. 94105" value="94043">
-        <mat-hint align="end">{{postalCode.value.length}} / 5</mat-hint>
+        <input matInput #postalCode maxlength="5" placeholder="Ex. 94105" />
       </mat-form-field>
     </div>
   </div>
@@ -73,4 +72,7 @@
       </div>
     </ng-container>
   </div>
+  <button type="submit" mat-raised-button color="primary">
+    Submit
+  </button>
 </form>
