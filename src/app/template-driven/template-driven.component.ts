@@ -7,18 +7,35 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TemplateDrivenComponent implements OnInit {
 
-  firstName;
-  lastName;
-  email;
-  address;
-  address2;
-  city;
-  state;
-  postalCode;
+  model: any = {};
+  required: any = false;
 
   constructor() { }
 
   ngOnInit(): void {
+    this.model = {
+      firstName: 'Pankaj',
+      lastName: 'Parkar',
+      email: 'parkar@sd.com',
+      address: {
+        address1: '1 ave',
+        address2: 'test',
+        city: 'Mumbai',
+        state: 'MH',
+        postalCode: 23423
+      },
+      languages: []
+    }
+  }
+
+  markAllRequired() {
+    this.required = true;
+  }
+
+  addLanguage() {
+    this.model.languages.push({
+      language: ''
+    });
   }
 
   submit(form) {
